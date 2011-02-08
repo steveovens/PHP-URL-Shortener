@@ -19,5 +19,14 @@ $(function () {
 	});
 });
 </script>
+<br/>
+<p>Click and drag the hyperlink (below) to your bookmark toolbar (above) to create a "bookmarklet" for your shortening service</p>
+<p>
+<?php 
+  $name_parts = explode('.', $_SERVER['HTTP_HOST']);
+  $bookmark = $name_parts[0];
+  echo "<a href=\"javascript:void(location.href='http://" . $_SERVER['HTTP_HOST'] . "/shortlink.php?longurl='+encodeURIComponent(location.href))\">" . $bookmark . "</a>" 
+?>
+</p>
 </body>
 </html>
